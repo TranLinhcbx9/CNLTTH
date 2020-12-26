@@ -20,6 +20,15 @@ namespace LK_API.Controllers
 
         }
 
+        //[HttpGet]
+        //[Route("getnhaccbyid/{id}")]
+        //public NhaCC GetNhaCCByID(int id)
+        //{
+        //    NhaCCDAO dao = new NhaCCDAO();
+        //    return dao.GetNhaCCByID(id);
+
+        //}
+
         [HttpPost]
         [Route("themnhacc")]
 
@@ -28,5 +37,22 @@ namespace LK_API.Controllers
             var l = new NhaCCDAO().CreateNCC(ncc);
             return Ok();
         }
+
+        [HttpPut]
+        [Route("suanhacc/{id}")]
+        public bool EditNhaCC(NhaCC ncc, int id)
+        {
+            NhaCCDAO dao = new NhaCCDAO();
+            return dao.EditNhaCC(ncc, id);
+        }
+
+        [HttpDelete]
+        [Route("xoanhacc/{id}")]
+        public bool XoaNhaCC(int id)
+        {
+            NhaCCDAO dao = new NhaCCDAO();
+            return dao.XoaNhaCC(id);
+        }
+
     }
 }

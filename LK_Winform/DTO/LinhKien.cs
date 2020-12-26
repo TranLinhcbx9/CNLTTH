@@ -26,16 +26,16 @@ namespace LK_Winform.DTO
 
         public string thoiGianBaoHanh { get; set; }
 
-        public LinhKien(string tenLinhKien, string thongSoKiThuat, string moTa, double? giaBan, string thoiGianBaoHanh)
-        {
-            //this.maLoaiLinhKien = maLoaiLinhKien;
-            //this.maNhaCungCap = maNhaCungCap;
-            //this.maLoaiMay = maLoaiMay;
-            this.tenLinhKien = tenLinhKien;
-            this.thongSoKiThuat = thongSoKiThuat;
-            this.moTa = moTa;
-            this.giaBan = giaBan;
-            this.thoiGianBaoHanh = thoiGianBaoHanh;
-        }
+        //public LinhKien(string tenLinhKien, string thongSoKiThuat, string moTa, double? giaBan, string thoiGianBaoHanh)
+        //{
+        //    //this.maLoaiLinhKien = maLoaiLinhKien;
+        //    //this.maNhaCungCap = maNhaCungCap;
+        //    //this.maLoaiMay = maLoaiMay;
+        //    this.tenLinhKien = tenLinhKien;
+        //    this.thongSoKiThuat = thongSoKiThuat;
+        //    this.moTa = moTa;
+        //    this.giaBan = giaBan;
+        //    this.thoiGianBaoHanh = thoiGianBaoHanh;
+        //}
     }
 }

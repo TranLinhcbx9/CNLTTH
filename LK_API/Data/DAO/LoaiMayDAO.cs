@@ -35,5 +35,52 @@ namespace LK_API.Data.DAO
             db.SaveChanges();
             return loaimay.maLoaiMay;
         }
+
+        public bool EditLoaiMay(LoaiMay lm, int id)
+        {
+            try
+            {
+                var x = db.LoaiMays.Find(id);
+                if (x != null)
+                {
+                    //x.maLoaiMay = lm.maLoaiMay;
+                    x.tenLoaiMay = lm.tenLoaiMay;
+
+                    db.SaveChanges();
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool XoaLoaiMay(int id)
+        {
+            try
+            {
+                var x = db.LoaiMays.Find(id);
+                if (x != null)
+                {
+
+                    db.LoaiMays.Remove(x);
+                    db.SaveChanges();
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }

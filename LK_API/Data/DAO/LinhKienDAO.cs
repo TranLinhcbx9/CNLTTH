@@ -42,6 +42,57 @@ namespace LK_API.Data.DAO
             db.SaveChanges();
             return linhkien.maLinhKien;
         }
+        
+        public bool EditLinhKien(LinhKien lk, int id)
+        {
+            try
+            {
+                var x = db.LinhKiens.Find(id);
+                if (x != null)
+                {
+                    x.maLoaiLinhKien = lk.maLoaiLinhKien;
+                    x.maLoaiMay = lk.maLoaiMay;
+                    x.maNhaCungCap = lk.maNhaCungCap;
+                    x.tenLinhKien = lk.tenLinhKien;
+                    x.thongSoKiThuat = lk.thongSoKiThuat;
+                    x.moTa = lk.moTa;
+                    x.giaBan = lk.giaBan;
+                    x.thoiGianBaoHanh = lk.thoiGianBaoHanh;
+                    db.SaveChanges();
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
 
+        public bool XoaLinhKien(int id)
+        {
+            try
+            {
+                var x = db.LinhKiens.Find(id);
+                if (x != null)
+                {
+                   
+                    db.LinhKiens.Remove(x);
+                    db.SaveChanges();
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }

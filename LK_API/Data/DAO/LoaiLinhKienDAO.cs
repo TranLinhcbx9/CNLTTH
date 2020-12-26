@@ -35,9 +35,52 @@ namespace LK_API.Data.DAO
             db.SaveChanges();
             return loailinhkien.maLoaiLinhKien;
         }
-        //public List<LinhKien> GetAllLinhKien()
-        //{
-        //    return db.LoaiLinhKiens.ToList();
-        //}
+
+        public bool EditLoaiLinhKien(LoaiLinhKien llk, int id)
+        {
+            try
+            {
+                var x = db.LoaiLinhKiens.Find(id);
+                if (x != null)
+                {
+                    //x.maLoaiLinhKien = llk.maLoaiLinhKien;
+                    x.tenLoai = llk.tenLoai;
+                  
+                    db.SaveChanges();
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool XoaLoaiLinhKien(int id)
+        {
+            try
+            {
+                var x = db.LoaiLinhKiens.Find(id);
+                if (x != null)
+                {
+
+                    db.LoaiLinhKiens.Remove(x);
+                    db.SaveChanges();
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }

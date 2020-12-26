@@ -22,7 +22,7 @@ namespace LK_API.Data.DAO
         }
         public int CreateNCC(NhaCC ncc)
         {
-            var nhacc = new NhaCC()
+            var nhacc = new NhaCC() 
             {
                 maNhaCungCap = ncc.maNhaCungCap,
                 tenNhaCungCap = ncc.tenNhaCungCap
@@ -33,6 +33,52 @@ namespace LK_API.Data.DAO
             db.NhaCCs.Add(nhacc);
             db.SaveChanges();
             return nhacc.maNhaCungCap;
+        }
+
+        public bool EditNhaCC(NhaCC lm, int id)
+        {
+            try
+            {
+                var x = db.NhaCCs.Find(id);
+                if (x != null)
+                {
+                    //x.maNhaCungCap = lm.maNhaCungCap;
+                    x.tenNhaCungCap = lm.tenNhaCungCap;
+                    db.SaveChanges();
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool XoaNhaCC(int id)
+        {
+            try
+            {
+                var x = db.NhaCCs.Find(id);
+                if (x != null)
+                {
+
+                    db.NhaCCs.Remove(x);
+                    db.SaveChanges();
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

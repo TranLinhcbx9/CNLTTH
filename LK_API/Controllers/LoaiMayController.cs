@@ -28,5 +28,21 @@ namespace LK_API.Controllers
             var l = new LoaiMayDAO().CreateLM(lm);
             return Ok();
         }
+
+        [HttpPut]
+        [Route("sualoaimay/{id}")]
+        public bool EditLoaiMay(LoaiMay lm, int id)
+        {
+            LoaiMayDAO dao = new LoaiMayDAO();
+            return dao.EditLoaiMay(lm, id);
+        }
+
+        [HttpDelete]
+        [Route("xoaloaimay/{id}")]
+        public bool XoaLoaiMay(int id)
+        {
+            LoaiMayDAO dao = new LoaiMayDAO();
+            return dao.XoaLoaiMay(id);
+        }
     }
 }

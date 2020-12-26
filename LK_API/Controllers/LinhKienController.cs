@@ -29,6 +29,22 @@ namespace LK_API.Controllers
             var l = new LinhKienDAO().CreateLinhkien(lk);
             return Ok();
         }
+
+        [HttpPut]
+        [Route("sualinhkien/{id}")]
+        public bool EditLinhKien(LinhKien lk, int id)
+        {
+            LinhKienDAO dao = new LinhKienDAO();
+            return dao.EditLinhKien(lk, id);
+        }
+
+        [HttpDelete]
+        [Route("xoalinhkien/{id}")]
+        public bool XoaLinhKien(int id)
+        {
+            LinhKienDAO dao = new LinhKienDAO();
+            return dao.XoaLinhKien(id);
+        }
     }
 
 }

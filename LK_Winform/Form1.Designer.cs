@@ -34,7 +34,7 @@ namespace LK_Winform
             this.cboMaNhaCungCap = new System.Windows.Forms.ComboBox();
             this.cboMaLoaiMay = new System.Windows.Forms.ComboBox();
             this.cboMaLoaiLinhKien = new System.Windows.Forms.ComboBox();
-            this.btnHienThi = new System.Windows.Forms.Button();
+            this.btnResetLK = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
@@ -59,32 +59,32 @@ namespace LK_Winform
             this.label11 = new System.Windows.Forms.Label();
             this.txtMaLLK2 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.btnLoadLLK = new System.Windows.Forms.Button();
+            this.btnResetLLK = new System.Windows.Forms.Button();
             this.btnSuaLLK = new System.Windows.Forms.Button();
             this.btnXoaLLK = new System.Windows.Forms.Button();
             this.btnThemLLK = new System.Windows.Forms.Button();
             this.dtgDisplayLLK = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btnResetLM = new System.Windows.Forms.Button();
             this.txtTenLM3 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.txtMaLM3 = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.btnLoadLM = new System.Windows.Forms.Button();
             this.btnSuaLM = new System.Windows.Forms.Button();
             this.btnXoaLM = new System.Windows.Forms.Button();
             this.btnThemLM = new System.Windows.Forms.Button();
             this.dtgDisplayLM = new System.Windows.Forms.DataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.btnResetNCC = new System.Windows.Forms.Button();
             this.txtTenNCC = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.txtMaNCC = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.btnLoadNCC = new System.Windows.Forms.Button();
             this.btnSuaNCC = new System.Windows.Forms.Button();
             this.btnXoaNCC = new System.Windows.Forms.Button();
             this.btnThemNCC = new System.Windows.Forms.Button();
             this.dtgDisplayNCC = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDisplayLinhKien)).BeginInit();
@@ -113,7 +113,7 @@ namespace LK_Winform
             this.tabPage1.Controls.Add(this.cboMaNhaCungCap);
             this.tabPage1.Controls.Add(this.cboMaLoaiMay);
             this.tabPage1.Controls.Add(this.cboMaLoaiLinhKien);
-            this.tabPage1.Controls.Add(this.btnHienThi);
+            this.tabPage1.Controls.Add(this.btnResetLK);
             this.tabPage1.Controls.Add(this.btnSua);
             this.tabPage1.Controls.Add(this.btnXoa);
             this.tabPage1.Controls.Add(this.btnThem);
@@ -165,14 +165,15 @@ namespace LK_Winform
             this.cboMaLoaiLinhKien.Size = new System.Drawing.Size(100, 21);
             this.cboMaLoaiLinhKien.TabIndex = 23;
             // 
-            // btnHienThi
+            // btnResetLK
             // 
-            this.btnHienThi.Location = new System.Drawing.Point(738, 310);
-            this.btnHienThi.Name = "btnHienThi";
-            this.btnHienThi.Size = new System.Drawing.Size(55, 23);
-            this.btnHienThi.TabIndex = 22;
-            this.btnHienThi.Text = "Hiển thị";
-            this.btnHienThi.UseVisualStyleBackColor = true;
+            this.btnResetLK.Location = new System.Drawing.Point(584, 300);
+            this.btnResetLK.Name = "btnResetLK";
+            this.btnResetLK.Size = new System.Drawing.Size(209, 33);
+            this.btnResetLK.TabIndex = 22;
+            this.btnResetLK.Text = "Reset Text";
+            this.btnResetLK.UseVisualStyleBackColor = true;
+            this.btnResetLK.Click += new System.EventHandler(this.btnResetLK_Click);
             // 
             // btnSua
             // 
@@ -182,6 +183,7 @@ namespace LK_Winform
             this.btnSua.TabIndex = 21;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
@@ -191,6 +193,7 @@ namespace LK_Winform
             this.btnXoa.TabIndex = 20;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThem
             // 
@@ -341,7 +344,7 @@ namespace LK_Winform
             this.tabPage2.Controls.Add(this.label11);
             this.tabPage2.Controls.Add(this.txtMaLLK2);
             this.tabPage2.Controls.Add(this.label12);
-            this.tabPage2.Controls.Add(this.btnLoadLLK);
+            this.tabPage2.Controls.Add(this.btnResetLLK);
             this.tabPage2.Controls.Add(this.btnSuaLLK);
             this.tabPage2.Controls.Add(this.btnXoaLLK);
             this.tabPage2.Controls.Add(this.btnThemLLK);
@@ -387,14 +390,15 @@ namespace LK_Winform
             this.label12.TabIndex = 28;
             this.label12.Text = "Mã loại linh kiện";
             // 
-            // btnLoadLLK
+            // btnResetLLK
             // 
-            this.btnLoadLLK.Location = new System.Drawing.Point(738, 310);
-            this.btnLoadLLK.Name = "btnLoadLLK";
-            this.btnLoadLLK.Size = new System.Drawing.Size(55, 23);
-            this.btnLoadLLK.TabIndex = 27;
-            this.btnLoadLLK.Text = "Load lại";
-            this.btnLoadLLK.UseVisualStyleBackColor = true;
+            this.btnResetLLK.Location = new System.Drawing.Point(584, 299);
+            this.btnResetLLK.Name = "btnResetLLK";
+            this.btnResetLLK.Size = new System.Drawing.Size(209, 34);
+            this.btnResetLLK.TabIndex = 27;
+            this.btnResetLLK.Text = "Reset Text";
+            this.btnResetLLK.UseVisualStyleBackColor = true;
+            this.btnResetLLK.Click += new System.EventHandler(this.btnResetLLK_Click_1);
             // 
             // btnSuaLLK
             // 
@@ -404,6 +408,7 @@ namespace LK_Winform
             this.btnSuaLLK.TabIndex = 26;
             this.btnSuaLLK.Text = "Sửa";
             this.btnSuaLLK.UseVisualStyleBackColor = true;
+            this.btnSuaLLK.Click += new System.EventHandler(this.btnSuaLLK_Click);
             // 
             // btnXoaLLK
             // 
@@ -413,6 +418,7 @@ namespace LK_Winform
             this.btnXoaLLK.TabIndex = 25;
             this.btnXoaLLK.Text = "Xóa";
             this.btnXoaLLK.UseVisualStyleBackColor = true;
+            this.btnXoaLLK.Click += new System.EventHandler(this.btnXoaLLK_Click);
             // 
             // btnThemLLK
             // 
@@ -431,24 +437,15 @@ namespace LK_Winform
             this.dtgDisplayLLK.Name = "dtgDisplayLLK";
             this.dtgDisplayLLK.Size = new System.Drawing.Size(572, 356);
             this.dtgDisplayLLK.TabIndex = 23;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(299, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(196, 24);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "QUẢN LÍ LINH KIỆN";
+            this.dtgDisplayLLK.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDisplayLLK_CellContentClick);
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.btnResetLM);
             this.tabPage3.Controls.Add(this.txtTenLM3);
             this.tabPage3.Controls.Add(this.label13);
             this.tabPage3.Controls.Add(this.txtMaLM3);
             this.tabPage3.Controls.Add(this.label14);
-            this.tabPage3.Controls.Add(this.btnLoadLM);
             this.tabPage3.Controls.Add(this.btnSuaLM);
             this.tabPage3.Controls.Add(this.btnXoaLM);
             this.tabPage3.Controls.Add(this.btnThemLM);
@@ -459,6 +456,16 @@ namespace LK_Winform
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Loại máy";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // btnResetLM
+            // 
+            this.btnResetLM.Location = new System.Drawing.Point(584, 299);
+            this.btnResetLM.Name = "btnResetLM";
+            this.btnResetLM.Size = new System.Drawing.Size(209, 34);
+            this.btnResetLM.TabIndex = 41;
+            this.btnResetLM.Text = "Reset Text";
+            this.btnResetLM.UseVisualStyleBackColor = true;
+            this.btnResetLM.Click += new System.EventHandler(this.btnResetLM_Click);
             // 
             // txtTenLM3
             // 
@@ -493,15 +500,6 @@ namespace LK_Winform
             this.label14.TabIndex = 37;
             this.label14.Text = "Mã loại máy";
             // 
-            // btnLoadLM
-            // 
-            this.btnLoadLM.Location = new System.Drawing.Point(738, 310);
-            this.btnLoadLM.Name = "btnLoadLM";
-            this.btnLoadLM.Size = new System.Drawing.Size(55, 23);
-            this.btnLoadLM.TabIndex = 36;
-            this.btnLoadLM.Text = "Load lại";
-            this.btnLoadLM.UseVisualStyleBackColor = true;
-            // 
             // btnSuaLM
             // 
             this.btnSuaLM.Location = new System.Drawing.Point(661, 339);
@@ -510,6 +508,7 @@ namespace LK_Winform
             this.btnSuaLM.TabIndex = 35;
             this.btnSuaLM.Text = "Sửa";
             this.btnSuaLM.UseVisualStyleBackColor = true;
+            this.btnSuaLM.Click += new System.EventHandler(this.btnSuaLM_Click);
             // 
             // btnXoaLM
             // 
@@ -519,6 +518,7 @@ namespace LK_Winform
             this.btnXoaLM.TabIndex = 34;
             this.btnXoaLM.Text = "Xóa";
             this.btnXoaLM.UseVisualStyleBackColor = true;
+            this.btnXoaLM.Click += new System.EventHandler(this.btnXoaLM_Click);
             // 
             // btnThemLM
             // 
@@ -537,14 +537,15 @@ namespace LK_Winform
             this.dtgDisplayLM.Name = "dtgDisplayLM";
             this.dtgDisplayLM.Size = new System.Drawing.Size(572, 356);
             this.dtgDisplayLM.TabIndex = 32;
+            this.dtgDisplayLM.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDisplayLM_CellContentClick);
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.btnResetNCC);
             this.tabPage4.Controls.Add(this.txtTenNCC);
             this.tabPage4.Controls.Add(this.label15);
             this.tabPage4.Controls.Add(this.txtMaNCC);
             this.tabPage4.Controls.Add(this.label16);
-            this.tabPage4.Controls.Add(this.btnLoadNCC);
             this.tabPage4.Controls.Add(this.btnSuaNCC);
             this.tabPage4.Controls.Add(this.btnXoaNCC);
             this.tabPage4.Controls.Add(this.btnThemNCC);
@@ -555,6 +556,16 @@ namespace LK_Winform
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Nhà cung cấp";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // btnResetNCC
+            // 
+            this.btnResetNCC.Location = new System.Drawing.Point(584, 299);
+            this.btnResetNCC.Name = "btnResetNCC";
+            this.btnResetNCC.Size = new System.Drawing.Size(209, 34);
+            this.btnResetNCC.TabIndex = 41;
+            this.btnResetNCC.Text = "Reset Text";
+            this.btnResetNCC.UseVisualStyleBackColor = true;
+            this.btnResetNCC.Click += new System.EventHandler(this.btnResetNCC_Click_1);
             // 
             // txtTenNCC
             // 
@@ -589,15 +600,6 @@ namespace LK_Winform
             this.label16.TabIndex = 37;
             this.label16.Text = "Mã nhà cung cấp";
             // 
-            // btnLoadNCC
-            // 
-            this.btnLoadNCC.Location = new System.Drawing.Point(738, 310);
-            this.btnLoadNCC.Name = "btnLoadNCC";
-            this.btnLoadNCC.Size = new System.Drawing.Size(55, 23);
-            this.btnLoadNCC.TabIndex = 36;
-            this.btnLoadNCC.Text = "Load lại";
-            this.btnLoadNCC.UseVisualStyleBackColor = true;
-            // 
             // btnSuaNCC
             // 
             this.btnSuaNCC.Location = new System.Drawing.Point(661, 339);
@@ -606,6 +608,7 @@ namespace LK_Winform
             this.btnSuaNCC.TabIndex = 35;
             this.btnSuaNCC.Text = "Sửa";
             this.btnSuaNCC.UseVisualStyleBackColor = true;
+            this.btnSuaNCC.Click += new System.EventHandler(this.btnSuaNCC_Click);
             // 
             // btnXoaNCC
             // 
@@ -615,6 +618,7 @@ namespace LK_Winform
             this.btnXoaNCC.TabIndex = 34;
             this.btnXoaNCC.Text = "Xóa";
             this.btnXoaNCC.UseVisualStyleBackColor = true;
+            this.btnXoaNCC.Click += new System.EventHandler(this.btnXoaNCC_Click);
             // 
             // btnThemNCC
             // 
@@ -633,6 +637,17 @@ namespace LK_Winform
             this.dtgDisplayNCC.Name = "dtgDisplayNCC";
             this.dtgDisplayNCC.Size = new System.Drawing.Size(572, 356);
             this.dtgDisplayNCC.TabIndex = 32;
+            this.dtgDisplayNCC.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDisplayNCC_CellContentClick);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(299, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(196, 24);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "QUẢN LÍ LINH KIỆN";
             // 
             // Form1
             // 
@@ -665,7 +680,7 @@ namespace LK_Winform
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Button btnHienThi;
+        private System.Windows.Forms.Button btnResetLK;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnThem;
@@ -690,7 +705,7 @@ namespace LK_Winform
         private System.Windows.Forms.ComboBox cboMaNhaCungCap;
         private System.Windows.Forms.ComboBox cboMaLoaiMay;
         private System.Windows.Forms.ComboBox cboMaLoaiLinhKien;
-        private System.Windows.Forms.Button btnLoadLLK;
+        private System.Windows.Forms.Button btnResetLLK;
         private System.Windows.Forms.Button btnSuaLLK;
         private System.Windows.Forms.Button btnXoaLLK;
         private System.Windows.Forms.Button btnThemLLK;
@@ -704,7 +719,6 @@ namespace LK_Winform
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtMaLM3;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Button btnLoadLM;
         private System.Windows.Forms.Button btnSuaLM;
         private System.Windows.Forms.Button btnXoaLM;
         private System.Windows.Forms.Button btnThemLM;
@@ -714,11 +728,12 @@ namespace LK_Winform
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtMaNCC;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Button btnLoadNCC;
         private System.Windows.Forms.Button btnSuaNCC;
         private System.Windows.Forms.Button btnXoaNCC;
         private System.Windows.Forms.Button btnThemNCC;
         private System.Windows.Forms.DataGridView dtgDisplayNCC;
+        private System.Windows.Forms.Button btnResetLM;
+        private System.Windows.Forms.Button btnResetNCC;
     }
 }
 

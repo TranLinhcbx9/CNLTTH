@@ -39,3 +39,4 @@ C:\Users\LinhNgoc\source\repos\ShopLK\LK_Winform\obj\Debug\LK_Winform.csproj.Cop
 C:\Users\LinhNgoc\source\repos\ShopLK\LK_Winform\obj\Debug\LK_Winform.exe
 C:\Users\LinhNgoc\source\repos\ShopLK\LK_Winform\obj\Debug\LK_Winform.pdb
 C:\Users\LinhNgoc\source\repos\ShopLK\LK_Winform\obj\Debug\LK_Winform.fMain.resources
+C:\Users\LinhNgoc\source\repos\ShopLK\LK_Winform\obj\Debug\LK_Winform.fThongKe.resources

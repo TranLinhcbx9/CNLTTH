@@ -45,6 +45,14 @@ namespace LK_API.Controllers
             LinhKienDAO dao = new LinhKienDAO();
             return dao.XoaLinhKien(id);
         }
+
+        [HttpGet]
+        [Route("timkiemlinhkien/{name}")]
+        public List<LinhKien> TimKiemLinhKien(string name)
+        {
+            LinhKienDAO dao = new LinhKienDAO();
+            return dao.TimKiemLinhKien(name);
+        }
     }
 
 }

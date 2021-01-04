@@ -167,11 +167,13 @@
     <Compile Include="Controllers\LoaiLinhKienController.cs" />
     <Compile Include="Controllers\LoaiMayController.cs" />
     <Compile Include="Controllers\NhaCCController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Data\DAO\LinhKienDAO.cs" />
     <Compile Include="Data\DAO\LoaiLinhKienDAO.cs" />
     <Compile Include="Data\DAO\LoaiMayDAO.cs" />
     <Compile Include="Data\DAO\NhaCCDAO.cs" />
+    <Compile Include="Data\DAO\UserDAO.cs" />
     <Compile Include="Data\EF\Anh.cs" />
     <Compile Include="Data\EF\ChiTietDonHang.cs" />
     <Compile Include="Data\EF\ChiTietPhieuNhap.cs" />

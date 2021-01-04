@@ -29,6 +29,7 @@ namespace LK_Winform
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.cboMaNhaCungCap = new System.Windows.Forms.ComboBox();
@@ -85,6 +86,23 @@ namespace LK_Winform
             this.btnThemNCC = new System.Windows.Forms.Button();
             this.dtgDisplayNCC = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtTimKiem = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.linhKienBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnLoadLK = new System.Windows.Forms.Button();
+            this.btnLoadLLK = new System.Windows.Forms.Button();
+            this.btnLoadLM = new System.Windows.Forms.Button();
+            this.btnLoadNCC = new System.Windows.Forms.Button();
+            this.maLinhKienDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maLoaiLinhKienDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maNhaCungCapDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maLoaiMayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenLinhKienDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.thongSoKiThuatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.moTaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.giaBanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.thoiGianBaoHanhDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.linhKienBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDisplayLinhKien)).BeginInit();
@@ -94,6 +112,8 @@ namespace LK_Winform
             ((System.ComponentModel.ISupportInitialize)(this.dtgDisplayLM)).BeginInit();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDisplayNCC)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.linhKienBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.linhKienBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -102,6 +122,7 @@ namespace LK_Winform
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.tabControl1.Location = new System.Drawing.Point(-3, 42);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -110,6 +131,9 @@ namespace LK_Winform
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btnLoadLK);
+            this.tabPage1.Controls.Add(this.btnSearch);
+            this.tabPage1.Controls.Add(this.txtTimKiem);
             this.tabPage1.Controls.Add(this.cboMaNhaCungCap);
             this.tabPage1.Controls.Add(this.cboMaLoaiMay);
             this.tabPage1.Controls.Add(this.cboMaLoaiLinhKien);
@@ -144,7 +168,7 @@ namespace LK_Winform
             // cboMaNhaCungCap
             // 
             this.cboMaNhaCungCap.FormattingEnabled = true;
-            this.cboMaNhaCungCap.Location = new System.Drawing.Point(689, 194);
+            this.cboMaNhaCungCap.Location = new System.Drawing.Point(693, 238);
             this.cboMaNhaCungCap.Name = "cboMaNhaCungCap";
             this.cboMaNhaCungCap.Size = new System.Drawing.Size(100, 21);
             this.cboMaNhaCungCap.TabIndex = 25;
@@ -152,7 +176,7 @@ namespace LK_Winform
             // cboMaLoaiMay
             // 
             this.cboMaLoaiMay.FormattingEnabled = true;
-            this.cboMaLoaiMay.Location = new System.Drawing.Point(689, 220);
+            this.cboMaLoaiMay.Location = new System.Drawing.Point(693, 264);
             this.cboMaLoaiMay.Name = "cboMaLoaiMay";
             this.cboMaLoaiMay.Size = new System.Drawing.Size(100, 21);
             this.cboMaLoaiMay.TabIndex = 24;
@@ -160,16 +184,16 @@ namespace LK_Winform
             // cboMaLoaiLinhKien
             // 
             this.cboMaLoaiLinhKien.FormattingEnabled = true;
-            this.cboMaLoaiLinhKien.Location = new System.Drawing.Point(689, 168);
+            this.cboMaLoaiLinhKien.Location = new System.Drawing.Point(693, 212);
             this.cboMaLoaiLinhKien.Name = "cboMaLoaiLinhKien";
             this.cboMaLoaiLinhKien.Size = new System.Drawing.Size(100, 21);
             this.cboMaLoaiLinhKien.TabIndex = 23;
             // 
             // btnResetLK
             // 
-            this.btnResetLK.Location = new System.Drawing.Point(584, 300);
+            this.btnResetLK.Location = new System.Drawing.Point(693, 300);
             this.btnResetLK.Name = "btnResetLK";
-            this.btnResetLK.Size = new System.Drawing.Size(209, 33);
+            this.btnResetLK.Size = new System.Drawing.Size(100, 33);
             this.btnResetLK.TabIndex = 22;
             this.btnResetLK.Text = "Reset Text";
             this.btnResetLK.UseVisualStyleBackColor = true;
@@ -208,7 +232,7 @@ namespace LK_Winform
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(588, 223);
+            this.label10.Location = new System.Drawing.Point(592, 267);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(63, 13);
             this.label10.TabIndex = 17;
@@ -217,7 +241,7 @@ namespace LK_Winform
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(588, 197);
+            this.label9.Location = new System.Drawing.Point(592, 241);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(91, 13);
             this.label9.TabIndex = 15;
@@ -226,7 +250,7 @@ namespace LK_Winform
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(588, 171);
+            this.label8.Location = new System.Drawing.Point(592, 215);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(83, 13);
             this.label8.TabIndex = 13;
@@ -234,7 +258,7 @@ namespace LK_Winform
             // 
             // txtThoiGianBaoHanh
             // 
-            this.txtThoiGianBaoHanh.Location = new System.Drawing.Point(689, 142);
+            this.txtThoiGianBaoHanh.Location = new System.Drawing.Point(693, 186);
             this.txtThoiGianBaoHanh.Name = "txtThoiGianBaoHanh";
             this.txtThoiGianBaoHanh.Size = new System.Drawing.Size(100, 20);
             this.txtThoiGianBaoHanh.TabIndex = 12;
@@ -242,7 +266,7 @@ namespace LK_Winform
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(588, 145);
+            this.label7.Location = new System.Drawing.Point(592, 189);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(99, 13);
             this.label7.TabIndex = 11;
@@ -250,7 +274,7 @@ namespace LK_Winform
             // 
             // txtGiaBan
             // 
-            this.txtGiaBan.Location = new System.Drawing.Point(689, 116);
+            this.txtGiaBan.Location = new System.Drawing.Point(693, 160);
             this.txtGiaBan.Name = "txtGiaBan";
             this.txtGiaBan.Size = new System.Drawing.Size(100, 20);
             this.txtGiaBan.TabIndex = 10;
@@ -258,7 +282,7 @@ namespace LK_Winform
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(588, 119);
+            this.label6.Location = new System.Drawing.Point(592, 163);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(44, 13);
             this.label6.TabIndex = 9;
@@ -266,7 +290,7 @@ namespace LK_Winform
             // 
             // txtMoTa
             // 
-            this.txtMoTa.Location = new System.Drawing.Point(689, 90);
+            this.txtMoTa.Location = new System.Drawing.Point(693, 134);
             this.txtMoTa.Name = "txtMoTa";
             this.txtMoTa.Size = new System.Drawing.Size(100, 20);
             this.txtMoTa.TabIndex = 8;
@@ -274,7 +298,7 @@ namespace LK_Winform
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(588, 93);
+            this.label5.Location = new System.Drawing.Point(592, 137);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(34, 13);
             this.label5.TabIndex = 7;
@@ -282,7 +306,7 @@ namespace LK_Winform
             // 
             // txtThongSoKiThuat
             // 
-            this.txtThongSoKiThuat.Location = new System.Drawing.Point(689, 64);
+            this.txtThongSoKiThuat.Location = new System.Drawing.Point(693, 108);
             this.txtThongSoKiThuat.Name = "txtThongSoKiThuat";
             this.txtThongSoKiThuat.Size = new System.Drawing.Size(100, 20);
             this.txtThongSoKiThuat.TabIndex = 6;
@@ -290,7 +314,7 @@ namespace LK_Winform
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(588, 67);
+            this.label4.Location = new System.Drawing.Point(592, 111);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(93, 13);
             this.label4.TabIndex = 5;
@@ -298,7 +322,7 @@ namespace LK_Winform
             // 
             // txtTenLinhKien
             // 
-            this.txtTenLinhKien.Location = new System.Drawing.Point(689, 38);
+            this.txtTenLinhKien.Location = new System.Drawing.Point(693, 82);
             this.txtTenLinhKien.Name = "txtTenLinhKien";
             this.txtTenLinhKien.Size = new System.Drawing.Size(100, 20);
             this.txtTenLinhKien.TabIndex = 4;
@@ -306,7 +330,7 @@ namespace LK_Winform
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(588, 41);
+            this.label3.Location = new System.Drawing.Point(592, 85);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(68, 13);
             this.label3.TabIndex = 3;
@@ -314,7 +338,7 @@ namespace LK_Winform
             // 
             // txtMaLinhKien
             // 
-            this.txtMaLinhKien.Location = new System.Drawing.Point(689, 12);
+            this.txtMaLinhKien.Location = new System.Drawing.Point(693, 56);
             this.txtMaLinhKien.Name = "txtMaLinhKien";
             this.txtMaLinhKien.ReadOnly = true;
             this.txtMaLinhKien.Size = new System.Drawing.Size(100, 20);
@@ -323,7 +347,7 @@ namespace LK_Winform
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(588, 15);
+            this.label2.Location = new System.Drawing.Point(592, 59);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 13);
             this.label2.TabIndex = 1;
@@ -331,7 +355,19 @@ namespace LK_Winform
             // 
             // dtgDisplayLinhKien
             // 
+            this.dtgDisplayLinhKien.AutoGenerateColumns = false;
             this.dtgDisplayLinhKien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgDisplayLinhKien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.maLinhKienDataGridViewTextBoxColumn,
+            this.maLoaiLinhKienDataGridViewTextBoxColumn,
+            this.maNhaCungCapDataGridViewTextBoxColumn,
+            this.maLoaiMayDataGridViewTextBoxColumn,
+            this.tenLinhKienDataGridViewTextBoxColumn,
+            this.thongSoKiThuatDataGridViewTextBoxColumn,
+            this.moTaDataGridViewTextBoxColumn,
+            this.giaBanDataGridViewTextBoxColumn,
+            this.thoiGianBaoHanhDataGridViewTextBoxColumn});
+            this.dtgDisplayLinhKien.DataSource = this.linhKienBindingSource1;
             this.dtgDisplayLinhKien.Location = new System.Drawing.Point(6, 6);
             this.dtgDisplayLinhKien.Name = "dtgDisplayLinhKien";
             this.dtgDisplayLinhKien.Size = new System.Drawing.Size(572, 356);
@@ -340,6 +376,7 @@ namespace LK_Winform
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.btnLoadLLK);
             this.tabPage2.Controls.Add(this.txtTenLLK2);
             this.tabPage2.Controls.Add(this.label11);
             this.tabPage2.Controls.Add(this.txtMaLLK2);
@@ -392,9 +429,9 @@ namespace LK_Winform
             // 
             // btnResetLLK
             // 
-            this.btnResetLLK.Location = new System.Drawing.Point(584, 299);
+            this.btnResetLLK.Location = new System.Drawing.Point(701, 299);
             this.btnResetLLK.Name = "btnResetLLK";
-            this.btnResetLLK.Size = new System.Drawing.Size(209, 34);
+            this.btnResetLLK.Size = new System.Drawing.Size(92, 34);
             this.btnResetLLK.TabIndex = 27;
             this.btnResetLLK.Text = "Reset Text";
             this.btnResetLLK.UseVisualStyleBackColor = true;
@@ -432,6 +469,7 @@ namespace LK_Winform
             // 
             // dtgDisplayLLK
             // 
+            this.dtgDisplayLLK.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgDisplayLLK.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgDisplayLLK.Location = new System.Drawing.Point(6, 6);
             this.dtgDisplayLLK.Name = "dtgDisplayLLK";
@@ -441,6 +479,7 @@ namespace LK_Winform
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.btnLoadLM);
             this.tabPage3.Controls.Add(this.btnResetLM);
             this.tabPage3.Controls.Add(this.txtTenLM3);
             this.tabPage3.Controls.Add(this.label13);
@@ -459,9 +498,9 @@ namespace LK_Winform
             // 
             // btnResetLM
             // 
-            this.btnResetLM.Location = new System.Drawing.Point(584, 299);
+            this.btnResetLM.Location = new System.Drawing.Point(704, 299);
             this.btnResetLM.Name = "btnResetLM";
-            this.btnResetLM.Size = new System.Drawing.Size(209, 34);
+            this.btnResetLM.Size = new System.Drawing.Size(89, 34);
             this.btnResetLM.TabIndex = 41;
             this.btnResetLM.Text = "Reset Text";
             this.btnResetLM.UseVisualStyleBackColor = true;
@@ -532,6 +571,7 @@ namespace LK_Winform
             // 
             // dtgDisplayLM
             // 
+            this.dtgDisplayLM.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgDisplayLM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgDisplayLM.Location = new System.Drawing.Point(6, 6);
             this.dtgDisplayLM.Name = "dtgDisplayLM";
@@ -541,6 +581,7 @@ namespace LK_Winform
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.btnLoadNCC);
             this.tabPage4.Controls.Add(this.btnResetNCC);
             this.tabPage4.Controls.Add(this.txtTenNCC);
             this.tabPage4.Controls.Add(this.label15);
@@ -559,9 +600,9 @@ namespace LK_Winform
             // 
             // btnResetNCC
             // 
-            this.btnResetNCC.Location = new System.Drawing.Point(584, 299);
+            this.btnResetNCC.Location = new System.Drawing.Point(706, 299);
             this.btnResetNCC.Name = "btnResetNCC";
-            this.btnResetNCC.Size = new System.Drawing.Size(209, 34);
+            this.btnResetNCC.Size = new System.Drawing.Size(87, 34);
             this.btnResetNCC.TabIndex = 41;
             this.btnResetNCC.Text = "Reset Text";
             this.btnResetNCC.UseVisualStyleBackColor = true;
@@ -632,6 +673,7 @@ namespace LK_Winform
             // 
             // dtgDisplayNCC
             // 
+            this.dtgDisplayNCC.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgDisplayNCC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgDisplayNCC.Location = new System.Drawing.Point(6, 6);
             this.dtgDisplayNCC.Name = "dtgDisplayNCC";
@@ -648,6 +690,129 @@ namespace LK_Winform
             this.label1.Size = new System.Drawing.Size(196, 24);
             this.label1.TabIndex = 5;
             this.label1.Text = "QUẢN LÍ LINH KIỆN";
+            // 
+            // txtTimKiem
+            // 
+            this.txtTimKiem.Location = new System.Drawing.Point(584, 16);
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(117, 20);
+            this.txtTimKiem.TabIndex = 26;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(707, 15);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(86, 23);
+            this.btnSearch.TabIndex = 27;
+            this.btnSearch.Text = "Tìm kiếm";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // linhKienBindingSource
+            // 
+            this.linhKienBindingSource.DataSource = typeof(LK_API.Data.EF.LinhKien);
+            // 
+            // btnLoadLK
+            // 
+            this.btnLoadLK.Location = new System.Drawing.Point(585, 300);
+            this.btnLoadLK.Name = "btnLoadLK";
+            this.btnLoadLK.Size = new System.Drawing.Size(98, 33);
+            this.btnLoadLK.TabIndex = 28;
+            this.btnLoadLK.Text = "Load lại";
+            this.btnLoadLK.UseVisualStyleBackColor = true;
+            this.btnLoadLK.Click += new System.EventHandler(this.btnLoadLK_Click);
+            // 
+            // btnLoadLLK
+            // 
+            this.btnLoadLLK.Location = new System.Drawing.Point(584, 299);
+            this.btnLoadLLK.Name = "btnLoadLLK";
+            this.btnLoadLLK.Size = new System.Drawing.Size(98, 33);
+            this.btnLoadLLK.TabIndex = 32;
+            this.btnLoadLLK.Text = "Load lại";
+            this.btnLoadLLK.UseVisualStyleBackColor = true;
+            this.btnLoadLLK.Click += new System.EventHandler(this.btnLoadLLK_Click);
+            // 
+            // btnLoadLM
+            // 
+            this.btnLoadLM.Location = new System.Drawing.Point(584, 299);
+            this.btnLoadLM.Name = "btnLoadLM";
+            this.btnLoadLM.Size = new System.Drawing.Size(98, 33);
+            this.btnLoadLM.TabIndex = 42;
+            this.btnLoadLM.Text = "Load lại";
+            this.btnLoadLM.UseVisualStyleBackColor = true;
+            this.btnLoadLM.Click += new System.EventHandler(this.btnLoadLM_Click);
+            // 
+            // btnLoadNCC
+            // 
+            this.btnLoadNCC.Location = new System.Drawing.Point(584, 299);
+            this.btnLoadNCC.Name = "btnLoadNCC";
+            this.btnLoadNCC.Size = new System.Drawing.Size(98, 33);
+            this.btnLoadNCC.TabIndex = 43;
+            this.btnLoadNCC.Text = "Load lại";
+            this.btnLoadNCC.UseVisualStyleBackColor = true;
+            this.btnLoadNCC.Click += new System.EventHandler(this.btnLoadNCC_Click);
+            // 
+            // maLinhKienDataGridViewTextBoxColumn
+            // 
+            this.maLinhKienDataGridViewTextBoxColumn.DataPropertyName = "maLinhKien";
+            this.maLinhKienDataGridViewTextBoxColumn.HeaderText = "Mã linh kiện";
+            this.maLinhKienDataGridViewTextBoxColumn.Name = "maLinhKienDataGridViewTextBoxColumn";
+            this.maLinhKienDataGridViewTextBoxColumn.Width = 70;
+            // 
+            // maLoaiLinhKienDataGridViewTextBoxColumn
+            // 
+            this.maLoaiLinhKienDataGridViewTextBoxColumn.DataPropertyName = "maLoaiLinhKien";
+            this.maLoaiLinhKienDataGridViewTextBoxColumn.HeaderText = "Mã loại linh kiện";
+            this.maLoaiLinhKienDataGridViewTextBoxColumn.Name = "maLoaiLinhKienDataGridViewTextBoxColumn";
+            this.maLoaiLinhKienDataGridViewTextBoxColumn.Width = 70;
+            // 
+            // maNhaCungCapDataGridViewTextBoxColumn
+            // 
+            this.maNhaCungCapDataGridViewTextBoxColumn.DataPropertyName = "maNhaCungCap";
+            this.maNhaCungCapDataGridViewTextBoxColumn.HeaderText = "Mã nhà cung cấp";
+            this.maNhaCungCapDataGridViewTextBoxColumn.Name = "maNhaCungCapDataGridViewTextBoxColumn";
+            this.maNhaCungCapDataGridViewTextBoxColumn.Width = 70;
+            // 
+            // maLoaiMayDataGridViewTextBoxColumn
+            // 
+            this.maLoaiMayDataGridViewTextBoxColumn.DataPropertyName = "maLoaiMay";
+            this.maLoaiMayDataGridViewTextBoxColumn.HeaderText = "Mã loại máy";
+            this.maLoaiMayDataGridViewTextBoxColumn.Name = "maLoaiMayDataGridViewTextBoxColumn";
+            this.maLoaiMayDataGridViewTextBoxColumn.Width = 70;
+            // 
+            // tenLinhKienDataGridViewTextBoxColumn
+            // 
+            this.tenLinhKienDataGridViewTextBoxColumn.DataPropertyName = "tenLinhKien";
+            this.tenLinhKienDataGridViewTextBoxColumn.HeaderText = "Tên linh kiện";
+            this.tenLinhKienDataGridViewTextBoxColumn.Name = "tenLinhKienDataGridViewTextBoxColumn";
+            // 
+            // thongSoKiThuatDataGridViewTextBoxColumn
+            // 
+            this.thongSoKiThuatDataGridViewTextBoxColumn.DataPropertyName = "thongSoKiThuat";
+            this.thongSoKiThuatDataGridViewTextBoxColumn.HeaderText = "Thông số kĩ thuật";
+            this.thongSoKiThuatDataGridViewTextBoxColumn.Name = "thongSoKiThuatDataGridViewTextBoxColumn";
+            // 
+            // moTaDataGridViewTextBoxColumn
+            // 
+            this.moTaDataGridViewTextBoxColumn.DataPropertyName = "moTa";
+            this.moTaDataGridViewTextBoxColumn.HeaderText = "Mô tả";
+            this.moTaDataGridViewTextBoxColumn.Name = "moTaDataGridViewTextBoxColumn";
+            // 
+            // giaBanDataGridViewTextBoxColumn
+            // 
+            this.giaBanDataGridViewTextBoxColumn.DataPropertyName = "giaBan";
+            this.giaBanDataGridViewTextBoxColumn.HeaderText = "Giá bán";
+            this.giaBanDataGridViewTextBoxColumn.Name = "giaBanDataGridViewTextBoxColumn";
+            // 
+            // thoiGianBaoHanhDataGridViewTextBoxColumn
+            // 
+            this.thoiGianBaoHanhDataGridViewTextBoxColumn.DataPropertyName = "thoiGianBaoHanh";
+            this.thoiGianBaoHanhDataGridViewTextBoxColumn.HeaderText = "Thời gian bảo hành";
+            this.thoiGianBaoHanhDataGridViewTextBoxColumn.Name = "thoiGianBaoHanhDataGridViewTextBoxColumn";
+            // 
+            // linhKienBindingSource1
+            // 
+            this.linhKienBindingSource1.DataSource = typeof(LK_Winform.DTO.LinhKien);
             // 
             // Form1
             // 
@@ -671,6 +836,8 @@ namespace LK_Winform
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDisplayNCC)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.linhKienBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.linhKienBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -734,6 +901,23 @@ namespace LK_Winform
         private System.Windows.Forms.DataGridView dtgDisplayNCC;
         private System.Windows.Forms.Button btnResetLM;
         private System.Windows.Forms.Button btnResetNCC;
+        private System.Windows.Forms.BindingSource linhKienBindingSource;
+        private System.Windows.Forms.BindingSource linhKienBindingSource1;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.TextBox txtTimKiem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maLinhKienDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maLoaiLinhKienDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maNhaCungCapDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maLoaiMayDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenLinhKienDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn thongSoKiThuatDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn moTaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn giaBanDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn thoiGianBaoHanhDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnLoadLK;
+        private System.Windows.Forms.Button btnLoadLLK;
+        private System.Windows.Forms.Button btnLoadLM;
+        private System.Windows.Forms.Button btnLoadNCC;
     }
 }
 

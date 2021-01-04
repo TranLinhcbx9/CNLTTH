@@ -94,5 +94,15 @@ namespace LK_API.Data.DAO
                 return false;
             }
         }
+
+        public List<LinhKien> TimKiemLinhKien(string name)
+        {
+            return db.LinhKiens.Where(x => x.tenLinhKien.Contains(name)).ToList();
+        }
+
+        //public List<LinhKien> TKTheoLLK()
+        //{
+        //    var x = db.Database.ExecuteSqlCommand("");
+        //}
     }
 }

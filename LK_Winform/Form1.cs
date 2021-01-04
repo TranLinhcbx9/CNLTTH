@@ -482,27 +482,6 @@ namespace LK_Winform
             {
                 txtThoiGianBaoHanh.Text = dtgDisplayLinhKien.CurrentRow.Cells[8].Value.ToString();
             }
-            //txtPrice.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-            //if (dataGridView1.CurrentRow.Cells[4].Value != null)
-            //{
-            //    txtPP.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-            //}
-            //if (dataGridView1.CurrentRow.Cells[5].Value != null)
-            //{
-            //    pictureBox1.Image = Image.FromFile(dataGridView1.CurrentRow.Cells[5].Value.ToString());
-            //}
-            //if (dataGridView1.CurrentRow.Cells[6].Value != null)
-            //{
-            //    pictureBox2.Image = Image.FromFile(dataGridView1.CurrentRow.Cells[6].Value.ToString());
-            //}
-            //if (dataGridView1.CurrentRow.Cells[7].Value != null)
-            //{
-            //    txtStock.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
-            //}
-            //if (dataGridView1.CurrentRow.Cells[8].Value != null)
-            //{
-            //    cboStatus.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
-            //}
         }
 
         private void btnThemLLK_Click(object sender, EventArgs e)
@@ -725,7 +704,7 @@ namespace LK_Winform
             //LinhKien lk = new LinhKien();
             if (txtMaLinhKien.Text == "")
             {
-                MessageBox.Show("ID not null");
+                MessageBox.Show("vui lòng nhập đầy đủ thông tin");
             }
             else
             {
@@ -982,6 +961,61 @@ namespace LK_Winform
                     }
                 }
             }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            List<LinhKien> list = null;
+
+            using (var client = new HttpClient())
+            {
+
+                client.BaseAddress = new Uri(baseAddress);
+
+                string name = txtTimKiem.Text;
+                //HTTP GET
+                var responseTask = client.GetAsync("timkiemlinhkien/" + name);
+                responseTask.Wait();
+
+                var result = responseTask.Result;
+                if (result.IsSuccessStatusCode)
+                {
+                    var readTask = result.Content.ReadAsAsync<List<LinhKien>>();
+                    readTask.Wait();
+
+                    list = readTask.Result;
+
+                    dtgDisplayLinhKien.DataSource = list;
+
+                    
+
+                }
+                else //web api sent error response 
+                {
+                    //log response status here..    
+
+                }
+            }
+        }
+
+        private void btnLoadLK_Click(object sender, EventArgs e)
+        {
+            LoadDataLK();
+        }
+
+        private void btnLoadLLK_Click(object sender, EventArgs e)
+        {
+            LoadDataLLK();
+        }
+
+        private void btnLoadLM_Click(object sender, EventArgs e)
+        {
+            LoadDataLM();
+        }
+
+        private void btnLoadNCC_Click(object sender, EventArgs e)
+        {
+            LoadDataNCC();
         }
     }
 }
